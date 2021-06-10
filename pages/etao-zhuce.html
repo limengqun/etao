@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <script src="../jquery/jquery.js"></script>
+    <link rel="stylesheet" href="../css/content.css">
+    <link rel="stylesheet" href="../css/etao-zhuce.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
+        <div class="header-c">
+            <div class="header-l fl">
+                <ul>
+                    <li class="login-dl">亲，请登录</li>
+                    <li class="login-zc">免费注册</li>
+                    <li>手机逛淘宝</li>
+                </ul>
+            </div>
+            <div class="header-r fr">
+                <ul>
+                    <li class="login-sy"><span>淘宝网首页</span></li>
+                    <li>我的淘宝</li>
+                    <li>购物车</li>
+                    <li>收藏夹</li>
+                    <li>商品分类</li>
+                    <li>卖家中心</li>
+                    <li>联系客服</li>
+                    <li>网站导航</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- 登录 -->
+    <div class="loging">
+        <div class="loging-c">
+            <p class="loging-tp1">用户注册</p>
+            <!-- <p class="loging-tp1"></p> -->
+            <div class="loging-b">
+                <form action="../php/zhuce.php" method="GET">
+                    账号：<input type="text" name="username" class="login-zh" placeholder="请输入账号"><span class="span2"></span>
+                    <br/>
+                    <span class="span1">6-30位字母、数字或‘—’，字母开头</span>
+                    <br/>
+                    登录密码：<input type="password" name="pass1" class="login-mm" placeholder="请输入密码"><span class="span2"></span>
+                    <br/>
+                    <span class="span1">数字和字母组合6位以上</span>
+                    <br/>
+                    确认密码：<input type="password" name="pass2" class="login-mm" placeholder="再次输入密码与第一次相同"><span class="span2"></span>
+                    <br/>
+                    <span class="span1">再次输入密码与第一次相同</span>
+                    <br/>
+                    <div class="checkbox">
+                        <input type="checkbox" class="checkbox-l fl"><span class="fl">已阅读并同意以下协议淘宝平台服务协议﹑隐私权政策、法律声明、支付宝及客户端服务协议</span>
+                    </div>
+                    <input type="submit" value="同意协议并注册" class="login-zc1" disabled>
+                </form>
+            </div>
+            <!-- 页脚 -->
+            <div class="flooer">
+                <div class="flooer-t">
+                    <ul>
+                        <li>阿里巴巴集团<span>│</span></li>
+                        <li>阿里巴巴国际站<span>│</span></li>
+                        <li>阿里巴巴中国站<span>│</span></li>
+                        <li>全球速卖通<span>│</span></li>
+                        <li>淘宝网<span>│</span></li>
+                        <li>天猫<span>│</span></li>
+                        <li>聚划算<span>│</span></li>
+                        <li>―淘<span>│</span></li>
+                        <li>阿里妈妈<span>│</span></li>
+                        <li>阿里云计算<span>│</span></li>
+                        <li>云OS<span>│</span> </li>
+                        <li>万网<span>│</span></li>
+                        <li>支付宝</li>
+                    </ul>
+                </div>
+                <div class="flooer-c">
+                    <ul>
+                        <li>关于淘宝</li>
+                        <li>合作伙伴</li>
+                        <li>营销中心</li>
+                        <li>联系客服</li>
+                        <li>开放平台</li>
+                        <li>诚征英才</li>
+                        <li>联系我们</li>
+                        <li>网站地图</li>
+                        <li>法律声明及隐私权政策</li>
+                        <li class="flooer-c1"> 2021 Taobao.com 版权所有</li>
+                    </ul>
+                </div>
+                <div class="flooer-b">
+                    <ul>
+                        <li>网络文化经营许可证：文网文[2010]040号<span>│</span></li>
+                        <li>增值电信业务经营许可证：浙B2-20080224-1<span>│</span></li>
+                        <li>信息网络传播视听节目许可证：1109364号</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/ajax.js"></script>
+    <script src="../js/cookie.js"></script>
+    <script src="../js/zhuce.js"></script>
+    <script>
+    //获取操作对象
+    var frm=document.querySelector('form')
+    var u1=document.querySelector('[name="username"]')
+    var p1=document.querySelector('[name="pass1"]')
+    var p2=document.querySelector('[name="pass2"]')
+    var spans=document.querySelectorAll('.span2')
+    var checkbox1=document.querySelector('[type="checkbox"]')
+    var submit1=document.querySelector('[type="submit"]')
+
+
+    //是否验证通过
+    var user1=false//用户名
+    var pswd1=false//密码1
+    var pswd2=false//密码2
+
+    //给选中框绑定点击事件
+    checkbox1.onclick=function(){
+        //判断当前选中框是否被选中
+        if(checkbox1.checked){
+            //当选中框被选中时，取消按钮的禁用
+            submit1.disabled=false
+        }else{
+            submit1.disabled=true
+        }
+    }
+
+    //给username失去焦点事件
+    u1.onblur=function(){
+        //获取输入框中的内容
+        var val=this.value
+        var reg=/^\w{6,30}$/
+        //判断当前输入框中的字符串是否满足正则表达式
+        if(reg.test(val)){
+            spans[0].innerHTML="√"
+            user1=true
+        }else{
+            spans[0].innerHTML="格式错误"
+            //让当前输入框重新获取焦点
+            this.focus()
+            user1=false
+        }
+    }
+    //给pswd1失去焦点事件
+    p1.onblur=function(){
+        var val=this.value
+        var reg=/^[A-Za-z0-9]{6,}$/
+        if(reg.test(val)){
+            // spans[1].innerHTML="√"
+            var a=0 // 表示数字
+            var b=0 // 表示小写字母
+            var c=0 // 表示大写字母
+            //遍历字符串中每个字符
+            for(var i=0;i<val.length;i++){
+                if('0'<=val[i] && val[i]<='9'){
+                     a=1
+                }else if('a'<=val[i] && val[i]<='z'){
+                     b=1
+                }else if('A'<=val[i] && val[i]<='Z'){
+                    c=1
+                }
+            }
+            if(a+b+c>=2){
+                spans[1].innerHTML="格式正确"
+            }else{
+                spans[1].innerHTML="请正确填写密码"
+            }
+            pswd1=true
+        }else{
+            spans[1].innerHTML="格式错误"
+            this.focus()
+            pswd1=false
+        }
+    }
+    //确认密码
+    p2.onblur=function(){
+        var val=this.value
+        //获取密码的value值
+        var val2=p1.value
+        var reg=/^[A-Za-z0-9]{6,}$/
+        if(val===val2 && reg.test(val2)){
+            spans[2].innerHTML="√"
+            pswd2=true
+        }else{
+            spans[2].innerHTML="两次密码不一致"
+            pswd2=false
+            this.focus()
+        }
+    }
+
+    //给form表单添加提交事件
+    frm.onsubmit=function(){
+        //判断表单元素是否验证通过
+        if(user1 && pswd1 && pswd2){
+            return true
+        }else{
+            u1.onblur()
+            p1.onblur()
+            p2.onblur()
+            return false
+        }
+    }
+    </script>
+    <script>
+        $(".login-dl").click(function(){
+            location.href = "./etao-login.html"
+        })
+        $(".login-zc").click(function(){
+            location.href = "./etao-zhuce.html"
+        })
+        $(".login-sy").click(function(){
+            location.href = "./etao-shouye.html"
+        })
+    </script>
+    
+</body>
+</html>

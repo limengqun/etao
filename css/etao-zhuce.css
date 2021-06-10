@@ -1,0 +1,175 @@
+body,html{
+    width: 100%;
+    height: 100%;
+    
+}
+/* 头部 */
+header{
+    z-index: 10000;
+    width: 100%;
+    background: #F5F5F5;
+    border-bottom: 1px solid #EEE;
+}
+.header-c{
+    margin: 0 auto;
+    width: 990px;
+    height: 35px;
+    background: #F5F5F5;
+}
+.header-l li{
+    float: left;
+    font-size: 12px;
+    line-height: 35px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.login-dl{
+    color: red;
+}
+.header-r li{
+    float: left;
+    margin: 0 10px;
+    font-size: 12px;
+    line-height: 35px;
+    cursor: pointer;
+}
+.header-r span{
+    color: red;
+}
+.header-c li:hover{
+    color: red;
+}
+/* 登录 */
+.loging-c{
+    margin: 0 auto;
+    width: 990px;
+}
+.loging-tp1{
+    display: block;
+    height: 100px;
+    line-height: 100px;
+    font-size: 22px;
+    margin: 0 20px 50px;
+}
+.loging-b{
+    width: 400px;
+    margin: 0 auto;
+    color: #3c3c3c;
+}
+.login-zh{
+    width: 220px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    margin: 0 0 0 32px;
+}
+.login-mm{
+    width: 220px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+}
+.login-zc1{
+    border-radius: 3px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    width: 310px;
+    margin: 10px 0 0 0;
+    border: none;
+    color: #fff;
+    background-color: coral;
+}
+.loging-b .span1{
+    font-size: 12px;
+    color: coral;
+    margin-left: 80px;
+}
+.loging-b .span2{
+    font-size: 14px;
+    color: red;
+    margin-left: 2px;
+}
+.checkbox{
+    margin-top: 10px;
+}
+.checkbox-l{
+    margin: 15px 0 0 25px;
+}
+.checkbox span{
+    display: block;
+    width: 220px;
+    margin-left: 43px;
+    font-size: 12px;
+}
+
+/* 登录框样式 */
+.for-1{
+    width: 250px;
+    margin: 40px auto 0;
+}
+.user1{
+    margin: 10px auto;
+    height: 20px;
+    width: 200px;
+}
+.for-dl{
+    margin: 0 auto;
+    background-color: #fb3434;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+}
+/* 页脚 */
+.flooer{
+    width: 990px;
+    height: 137px;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+}
+.flooer-t ul{
+    height: 36px;
+    width: 990px;
+    line-height: 36px;
+    border-bottom: 1px solid #ddd;
+}
+.flooer-t ul li{
+    float: left;
+    font-size: 12px;
+    color: #6c6c6c;
+}
+.flooer-t ul li span{
+    color: #ddd;
+    margin: 0 8px;
+}
+.flooer-c ul{
+    height: 36px;
+    width: 990px;
+    line-height: 36px;
+}
+.flooer-c ul li{
+    float: left;
+    font-size: 12px;
+    color: #6c6c6c;
+    margin-right: 6px;
+}
+.flooer-c .flooer-c1{
+    margin-left: 30px;
+    color: #9c9c9c;
+}
+.flooer-b ul{
+    height: 36px;
+    width: 990px;
+    line-height: 36px;
+}
+.flooer-b ul li{
+    float: left;
+    font-size: 12px;
+    color: #9c9c9c;
+    margin-right: 6px;
+}
+.flooer-b span{
+    color: #9c9c9c;
+    margin: 0 8px;
+}
